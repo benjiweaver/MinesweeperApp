@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:ctk="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             x:Class="MineSweeperGameApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout x:Name="MainContainer" BackgroundColor="LightGray"
+            Padding="0,15"
+            Spacing="0">
+
+            <HorizontalStackLayout Spacing="20" 
+                                   Padding="15,0">
+                <StackLayout>
+                    <Label Text="Rows/Columns">
+                    </Label>
+                    <Entry x:Name="GameBoardSizeeEntry"
+                       Text="15"
+                       BackgroundColor="White">
+                    </Entry>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="# of Mines"
+                       Padding="20,0">
+                    </Label>
+                    <Entry x:Name="NumberOfMinesEntry"
+                       Text="40"
+                       BackgroundColor="White">
+                    </Entry>
+                </StackLayout>
+
+                <Button x:Name="NewGameButton"
+                    Text="New Game" 
+                    Clicked="NewGameButton_Clicked" 
+                    CornerRadius="0"
+                    HorizontalOptions="CenterAndExpand">
+                </Button>
+
+            </HorizontalStackLayout>
+
+            <Label x:Name="NumberOfMinesLeftLabel" Text="Number of mines left: " Margin ="20,40,10,10" FontAttributes="Bold" FontSize="Medium"></Label>
+
+            <ScrollView Orientation="Horizontal"
+                        HorizontalOptions="FillAndExpand" 
+                        HorizontalScrollBarVisibility="Always"
+                        VerticalOptions="FillAndExpand">
+                <Grid x:Name="GameBoardGrid" 
+                      AbsoluteLayout.LayoutBounds="0,0,1,1"
+                      AbsoluteLayout.LayoutFlags="All"
+                      HorizontalOptions="FillAndExpand" 
+                      VerticalOptions="FillAndExpand" 
+                      ColumnSpacing="0"
+                      RowSpacing="0"
+                      BackgroundColor="White"
+                      ZIndex="1">
+                </Grid>
+            </ScrollView>
+            <Button x:Name="HideCheatPanelButton" Text="Show Cheat Sheet" Clicked="HideCheatPanelButton_Clicked"></Button>
+            <Label x:Name="TestLabel" FontFamily="monospace" IsVisible="False"></Label>
+        </VerticalStackLayout>
+        
+    </ScrollView>
+
+</ContentPage>
